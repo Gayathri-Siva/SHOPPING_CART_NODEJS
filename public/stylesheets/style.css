@@ -1,0 +1,33 @@
+.thumbnail img{
+    max-height: 200px;
+    max-width:200px;
+}
+.thumbnail .description
+{
+    color: rgb(87, 82, 82);
+}
+
+.price
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    display: flex;
+    height: 100%;
+    border: 2px solid #c9a66b;
+    flex-direction: column;
+  }
+  body{
+      background-color:#ebdcb2
+  }
+  .thumbnail .caption
+   { display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+      height: 100%;
+   }

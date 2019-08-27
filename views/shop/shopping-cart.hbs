@@ -1,0 +1,61 @@
+{{# if products}}
+<div class="container ">
+<div class="row display-flex">
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 ">
+      <ul class="list-group">
+          {{#each products}}
+  <li class="list-group-item">
+      <img src="{{this.item.imagePath}}" style="height: 100px;width:100px;" alt="..." class="img-fluid img-thumbnail">
+              
+              <strong>{{this.item.title}}</strong>
+              <div class="col pull-right">
+                                        <div class="input-group ">
+                                    <span class="input-group-btn">
+                                        <a  href="/reduce/{{this.item._id}}" type="button" class="quantity-left-minus btn btn-danger btn-number">
+                                        <span class="glyphicon glyphicon-minus"></span></a>
+                                    </span>
+                                    <span class="" style="padding:15px">{{this.qty}}</span>
+                                    <span class="input-group-btn">
+                                        <a  href="/increase/{{this.item._id}}" type="button" class="quantity-right-plus btn btn-success btn-number">
+                                        <span class="glyphicon glyphicon-plus"></span></a>
+                                    </span>
+                                    
+                                </div>
+                                
+                        </div>
+              <br><br>
+              <div class="pull-bottom clearfix">
+               <span class="label label-success  pull-left" style="font-size:20px">  &#x20B9; {{this.price}}</span>
+                  <a class="btn btn-danger pull-right" href="/remove/{{this.item._id}}">Delete</a>      
+      
+              </div>
+                  </li>
+          <br>
+          {{/each}}
+        
+      </ul>
+   </div>
+   </div>
+</div>
+
+
+   <div class="row">
+  <div class="col-sm-6 col-md-4 cold-md-offset-3 col-sm-offset-3">
+      <strong>Total:  &#x20B9;{{totalPrice}}</strong>
+   </div>
+   </div>
+<hr>
+   <div class="row">
+       <div class="col-sm-6 col-md-4 cold-md-offset-3 col-sm-offset-3">
+           <a href="/checkout" type="button"class="btn btn-success">Checkout</a>
+  </div>
+   </div>
+{{else}}
+
+  <div class="row">
+       <div class="col-sm-6 col-md-4 cold-md-offset-3 col-sm-offset-3">
+           <h2>No Items in Cart</h2>
+  </div>
+   </div>
+{{/if}}
+
